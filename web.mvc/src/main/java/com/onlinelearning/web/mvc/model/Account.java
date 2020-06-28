@@ -1,0 +1,143 @@
+package com.onlinelearning.web.mvc.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "USER_ACCOUNTS")
+@EqualsAndHashCode
+public class Account extends AbstractSuperClass implements Serializable {
+
+	
+	private static final long serialVersionUID = -8355838328871294228L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ACCOUNT_ID")
+	private Long userAccount;
+	@JoinColumn(referencedColumnName = "USER_ID", name = "USER_ID")
+	@OneToOne( fetch = FetchType.LAZY)
+	@Fetch(FetchMode.JOIN)
+	private User user;
+	@Column(name = "USER_EMAIL")
+	private String email;
+	@Column(name = "USER_PASSWORD")
+	private String password;
+	@Column(name = "IS_BLOCKED")
+	private Character isblocked;
+	@Column(name = "IS_BANNED")
+	private Character isBanned;
+	
+	
+	public Account() {
+		
+	}
+
+
+	public Account(Long userAccount, User user, String email, String password, Character isblocked,
+			Character isBanned) {
+		super();
+		this.userAccount = userAccount;
+		this.user = user;
+		this.email = email;
+		this.password = password;
+		this.isblocked = isblocked;
+		this.isBanned = isBanned;
+	}
+
+@Override
+public String toString() {
+	String formated = java.text.MessageFormat.format("accountId:{0} email:{1}  isblocked:{2} isBanned:{3]", this.userAccount,this.email,this.isblocked, this.isBanned);
+	return formated;
+}
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+
+	public Long getUserAccount() {
+		return userAccount;
+	}
+
+
+	public void setUserAccount(Long userAccount) {
+		this.userAccount = userAccount;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+	public Character getIsblocked() {
+		return isblocked;
+	}
+
+
+	public void setIsblocked(Character isblocked) {
+		this.isblocked = isblocked;
+	}
+
+
+	public Character getIsBanned() {
+		return isBanned;
+	}
+
+
+	public void setIsBanned(Character isBanned) {
+		this.isBanned = isBanned;
+	}
+	
+	
+
+
+	
+	
+	
+}
