@@ -3,10 +3,12 @@ package com.onlinelearning.web.mvc.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.onlinelearning.web.mvc.model.CourseRegistration;
 import com.onlinelearning.web.mvc.repository.CourseRegistrationRepository;
-
+@Component
+@org.springframework.stereotype.Service
 public class CourseRegistrationService implements Service<CourseRegistration> {
 
 	private final CourseRegistrationRepository repository;

@@ -3,10 +3,12 @@ package com.onlinelearning.web.mvc.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.onlinelearning.web.mvc.model.UserLocation;
 import com.onlinelearning.web.mvc.repository.UserLocationRepository;
-
+@Component
+@org.springframework.stereotype.Service
 public class UserLocationService implements Service<UserLocation> {
 
 	private final UserLocationRepository repository;

@@ -3,10 +3,12 @@ package com.onlinelearning.web.mvc.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.onlinelearning.web.mvc.model.Payment;
 import com.onlinelearning.web.mvc.repository.PaymentRepository;
-
+@Component
+@org.springframework.stereotype.Service
 public class PaymentService implements Service<Payment> {
 
 	private final PaymentRepository repository;

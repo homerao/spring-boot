@@ -2,14 +2,18 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.onlinelearning.web.mvc.model.Category;
 import com.onlinelearning.web.mvc.repository.CategoryRepository;
-
+@Component
+@org.springframework.stereotype.Service
 public class CategoryService implements Service<Category> {
 
 	private final CategoryRepository repository;
 	
-	
+	@Autowired
 	public CategoryService(CategoryRepository repository) {
 		super();
 		this.repository = repository;
