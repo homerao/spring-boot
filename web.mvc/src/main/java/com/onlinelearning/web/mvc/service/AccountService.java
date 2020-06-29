@@ -22,10 +22,6 @@ public class AccountService implements com.onlinelearning.web.mvc.service.Servic
 		this.repository = repository;
 	}
 	
-	
-
-	
-
 
 
 

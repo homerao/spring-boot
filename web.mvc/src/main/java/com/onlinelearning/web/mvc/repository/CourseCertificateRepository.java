@@ -7,7 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.onlinelearning.web.mvc.model.CourseCertificate;
 @org.springframework.stereotype.Repository
 @EnableJpaRepositories
-
 public interface CourseCertificateRepository  extends CrudRepository<CourseCertificate, Long>, JpaRepository<CourseCertificate, Long>{
 
 }
