@@ -58,6 +58,10 @@ public class AccountService implements com.onlinelearning.web.mvc.service.Servic
 		
 		return  repository.findAll();
 	}
+	
+	public Account findByEmail(String email) {
+		return repository.findByEmail(email);
+	}
 
 	
 

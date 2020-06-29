@@ -2,37 +2,48 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.onlinelearning.web.mvc.model.CourseOrder;
+import com.onlinelearning.web.mvc.repository.CourseOrderRepository;
 
 public class CourseOrderService implements Service<CourseOrder> {
 
+	private final CourseOrderRepository repository;
+	
+	@Autowired
+	public CourseOrderService(CourseOrderRepository repository) {
+		super();
+		this.repository = repository;
+	}
+
 	@Override
 	public CourseOrder save(CourseOrder entitydto) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public CourseOrder update(CourseOrder entitydto) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public void delete(CourseOrder entitydto) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public CourseOrder findOne(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public List<CourseOrder> findAll() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

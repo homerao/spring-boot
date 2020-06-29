@@ -3,8 +3,16 @@ package com.onlinelearning.web.mvc.service;
 import java.util.List;
 
 import com.onlinelearning.web.mvc.model.ApiAccess;
+import com.onlinelearning.web.mvc.repository.ApiAccessRepository;
 
 public class ApiAccessService implements Service<ApiAccess> {
+
+	private final ApiAccessRepository repository;
+	
+	public ApiAccessService(ApiAccessRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public ApiAccess save(ApiAccess entitydto) {

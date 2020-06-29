@@ -2,13 +2,21 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.onlinelearning.web.mvc.model.AccountRecovery;
+import com.onlinelearning.web.mvc.repository.AccountRepository;
 
 public class AccountRecoveryService implements Service<AccountRecovery> {
 
+	private final AccountRepository repository;
+	@Autowired
+	public AccountRecoveryService(AccountRepository rep) {
+		this.repository = rep;
+	}
 	@Override
 	public AccountRecovery save(AccountRecovery entitydto) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

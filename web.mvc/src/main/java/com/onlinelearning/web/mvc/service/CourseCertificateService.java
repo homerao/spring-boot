@@ -2,9 +2,19 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.onlinelearning.web.mvc.model.CourseCertificate;
+import com.onlinelearning.web.mvc.repository.CourseCertificateRepository;
 
 public class CourseCertificateService implements Service<CourseCertificate> {
+
+	private final CourseCertificateRepository repository;
+	@Autowired
+	public CourseCertificateService(CourseCertificateRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public CourseCertificate save(CourseCertificate entitydto) {

@@ -2,7 +2,18 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.onlinelearning.web.mvc.repository.CourseMediaRepository;
+
 public class CourseMediaService implements Service<CourseMediaService> {
+
+	private final CourseMediaRepository repository;
+	@Autowired
+	public CourseMediaService(CourseMediaRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public CourseMediaService save(CourseMediaService entitydto) {

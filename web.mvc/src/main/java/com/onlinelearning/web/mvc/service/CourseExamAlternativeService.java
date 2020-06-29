@@ -2,10 +2,19 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.onlinelearning.web.mvc.model.CourseExamAlternative;
+import com.onlinelearning.web.mvc.repository.CourseExamAlternativeRepository;
 
 public class CourseExamAlternativeService implements Service<CourseExamAlternative> {
+
+	private final CourseExamAlternativeRepository repository;
+	@Autowired
+	public CourseExamAlternativeService(CourseExamAlternativeRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public CourseExamAlternative save(CourseExamAlternative entitydto) {

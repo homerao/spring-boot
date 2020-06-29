@@ -2,9 +2,19 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.onlinelearning.web.mvc.model.CourseQuestion;
+import com.onlinelearning.web.mvc.repository.CourseQuestionRepository;
 
 public class CourseQuestionService implements Service<CourseQuestion> {
+
+	private final CourseQuestionRepository repository;
+	@Autowired
+	public CourseQuestionService(CourseQuestionRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public CourseQuestion save(CourseQuestion entitydto) {

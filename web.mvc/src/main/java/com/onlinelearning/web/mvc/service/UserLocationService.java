@@ -2,9 +2,19 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.onlinelearning.web.mvc.model.UserLocation;
+import com.onlinelearning.web.mvc.repository.UserLocationRepository;
 
 public class UserLocationService implements Service<UserLocation> {
+
+	private final UserLocationRepository repository;
+	@Autowired
+	public UserLocationService(UserLocationRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public UserLocation save(UserLocation entitydto) {

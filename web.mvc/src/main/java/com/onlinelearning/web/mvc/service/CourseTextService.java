@@ -2,9 +2,19 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.onlinelearning.web.mvc.model.CourseText;
+import com.onlinelearning.web.mvc.repository.CourseTextRepository;
 
 public class CourseTextService implements Service<CourseText> {
+
+	private final CourseTextRepository repository;
+	@Autowired
+	public CourseTextService(CourseTextRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public CourseText save(CourseText entitydto) {

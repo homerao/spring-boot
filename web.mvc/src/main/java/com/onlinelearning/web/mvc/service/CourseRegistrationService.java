@@ -2,9 +2,19 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.onlinelearning.web.mvc.model.CourseRegistration;
+import com.onlinelearning.web.mvc.repository.CourseRegistrationRepository;
 
 public class CourseRegistrationService implements Service<CourseRegistration> {
+
+	private final CourseRegistrationRepository repository;
+	@Autowired
+	public CourseRegistrationService(CourseRegistrationRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public CourseRegistration save(CourseRegistration entitydto) {

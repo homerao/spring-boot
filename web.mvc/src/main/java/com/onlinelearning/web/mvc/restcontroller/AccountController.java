@@ -34,10 +34,17 @@ public class AccountController  {
 		return ResponseEntity.status(HttpStatus.OK).body(accountList);
 	}
 	
-	@GetMapping(path = "/accounts/{accountid}")
+	@GetMapping(path = "/{accountid}")
 	public ResponseEntity<Account> getAllAccounts(@PathVariable(name = "accountid") Long accountId){
 		Account account;
 		account = service.findOne(accountId);
+		return ResponseEntity.status(HttpStatus.OK).body(account);
+	}
+	
+	@GetMapping(path = "/{email}")
+	public ResponseEntity<Account> getAllAccounts(@PathVariable(name = "email") String email){
+		Account account;
+		account = service.findByEmail(email);
 		return ResponseEntity.status(HttpStatus.OK).body(account);
 	}
 

@@ -2,9 +2,19 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.onlinelearning.web.mvc.model.CourseOrderItem;
+import com.onlinelearning.web.mvc.repository.CourseOrderItemRepository;
 
 public class CourseOrderItemService implements Service<CourseOrderItem> {
+
+	private final CourseOrderItemRepository repository;
+	@Autowired
+	public CourseOrderItemService(CourseOrderItemRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public CourseOrderItem save(CourseOrderItem entitydto) {
