@@ -16,12 +16,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table(name = "COURSE_MEDIA_CONTENT")
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
+@Entity
+@Table(name = "COURSE_MEDIA_CONTENT")
 public class CourseMedia extends AbstractSuperClass implements Serializable{
 
 	/**

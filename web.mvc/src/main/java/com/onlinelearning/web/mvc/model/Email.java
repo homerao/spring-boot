@@ -19,10 +19,11 @@ import lombok.ToString;
 
 
 
-@Entity
+
+
+
 @Table(name = "EMAILS")
-@ToString
-@EqualsAndHashCode
+@Entity
 public class Email extends AbstractSuperClass implements Serializable{
 
 	/**
@@ -44,7 +45,7 @@ public class Email extends AbstractSuperClass implements Serializable{
 	@Column(name = "SENDER")
     private String sender;
 	@Column(name = "RECEIVER")
-    private String receiber;
+    private String receiver;
     
     
     public Email() {
@@ -59,7 +60,7 @@ public class Email extends AbstractSuperClass implements Serializable{
 		this.title = title;
 		this.message = message;
 		this.sender = sender;
-		this.receiber = receiber;
+		this.receiver = receiber;
 	}
 
 
@@ -114,17 +115,31 @@ public class Email extends AbstractSuperClass implements Serializable{
 
 
 	public String getReceiber() {
-		return receiber;
+		return receiver;
 	}
 
 
 	public void setReceiber(String receiber) {
-		this.receiber = receiber;
+		this.receiver = receiber;
 	}
 
 
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
 
-
-    
+    @Override
+    public String toString() {
+    	
+    	return java.text.MessageFormat.format("Email{0}", this.receiver);
+    }
 	
 }

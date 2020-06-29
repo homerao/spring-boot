@@ -17,12 +17,13 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-@Entity
-@Table(name = "EXAM_APPLICATIONS")
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
+@Entity
+@Table(name = "EXAM_APPLICATIONS")
 public class CourseExamApplication extends AbstractSuperClass implements Serializable{
 
 	/**

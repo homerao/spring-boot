@@ -14,14 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table(name = "USER_ADDRESS")
+
 @EqualsAndHashCode
 @ToString
+@Entity
+@Table(name = "USER_ADDRESS")
 public class UserAddress  extends AbstractSuperClass implements Serializable{
  
 	private static final long serialVersionUID = 1L;
@@ -61,8 +60,8 @@ public class UserAddress  extends AbstractSuperClass implements Serializable{
 	
 	@Override
 	public String toString() {
-		String formated = java.text.MessageFormat.format("User:{0}, street: {1} ", user.getFullName(),streetName);
-		return formated;
+		 
+		return java.text.MessageFormat.format("User:{0}, street: {1} ", user.getFullName(),streetName);
 	}
 
 	public Long getAddressId() {

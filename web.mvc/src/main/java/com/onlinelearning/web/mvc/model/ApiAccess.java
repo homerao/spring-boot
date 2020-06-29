@@ -22,8 +22,8 @@ import lombok.ToString;
 
 @EqualsAndHashCode
 @ToString
-@Table(name = "API_ACCESS")
 @Entity
+@Table(name = "API_ACCESS")
 public class ApiAccess extends AbstractSuperClass implements Serializable {
 
 	

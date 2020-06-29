@@ -29,7 +29,7 @@ public class Category extends AbstractSuperClass implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "CATEGORY_ID", nullable = false)
 	private Long categoryId;
-	@Column(name = "CATEGORY_NAME", length = 25)
+	@Column(name = "CATEGORY_NAME", length = 30)
 	private String categoryName;
 	@Column(name = "CATEGORY_SLUG", length = 3)
 	private String categorySlug;

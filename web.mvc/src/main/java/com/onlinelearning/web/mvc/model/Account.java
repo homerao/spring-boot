@@ -22,9 +22,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+
+@EqualsAndHashCode
 @Entity
 @Table(name = "USER_ACCOUNTS")
-@EqualsAndHashCode
 public class Account extends AbstractSuperClass implements Serializable {
 
 	

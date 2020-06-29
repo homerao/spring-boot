@@ -23,10 +23,10 @@ import org.hibernate.annotations.FetchMode;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+
+
 @Entity
 @Table(name = "PAYMENTS")
-@ToString
-@EqualsAndHashCode
 public class Payment extends AbstractSuperClass implements Serializable {
 
 	
@@ -113,5 +113,22 @@ public class Payment extends AbstractSuperClass implements Serializable {
 		this.type = type;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
 	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+	
+	
+	@Override
+	public String toString() {
+		
+		return java.text.MessageFormat.format("pagamento {0}", this.type);
+	}
 }

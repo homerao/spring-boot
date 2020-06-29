@@ -20,12 +20,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table(name = "COURSE_ORDERS")
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
+@Entity
+@Table(name = "COURSE_ORDERS")
 public class CourseOrder extends AbstractSuperClass implements Serializable{
 
 	

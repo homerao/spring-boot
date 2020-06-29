@@ -19,11 +19,12 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Table(name = "ACCOUNT_RECOVERY")
+
 @Getter
 @Setter
 @EqualsAndHashCode
+@Entity
+@Table(name = "ACCOUNT_RECOVERY")
 public class AccountRecovery extends AbstractSuperClass implements Serializable {
 
 

@@ -18,12 +18,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table(name = "ORDER_ITENS")
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
+@Entity
+@Table(name = "ORDER_ITENS")
 public class CourseOrderItem  extends AbstractSuperClass implements Serializable{
 
 	private static final long serialVersionUID = 1L;
