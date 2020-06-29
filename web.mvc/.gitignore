@@ -2,8 +2,14 @@ HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
+<<<<<<< Upstream, based on DevApi/feature/apiRest
 /src/test/**
 application.properties
+=======
+application.properties
+/src/test/**
+
+>>>>>>> 9e43580 ajustando o gitignore
 ### STS ###
 .apt_generated
 .classpath
@@ -29,3 +35,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/
