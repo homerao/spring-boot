@@ -17,8 +17,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 
-@EqualsAndHashCode
-@ToString
+
 @Entity
 @Table(name = "USER_ADDRESS")
 public class UserAddress  extends AbstractSuperClass implements Serializable{
@@ -118,6 +117,18 @@ public class UserAddress  extends AbstractSuperClass implements Serializable{
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
 	}
 	
 	

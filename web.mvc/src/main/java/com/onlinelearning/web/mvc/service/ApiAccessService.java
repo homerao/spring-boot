@@ -39,7 +39,7 @@ public class ApiAccessService implements Service<ApiAccess> {
 	@Override
 	public ApiAccess findOne(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return repository.getOne(id);
 	}
 
 	@Override

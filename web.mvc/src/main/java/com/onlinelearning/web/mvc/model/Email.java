@@ -25,10 +25,6 @@ import lombok.ToString;
 @Table(name = "EMAILS")
 @Entity
 public class Email extends AbstractSuperClass implements Serializable{
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
