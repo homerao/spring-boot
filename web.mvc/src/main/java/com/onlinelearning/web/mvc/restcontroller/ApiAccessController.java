@@ -14,7 +14,6 @@ import com.onlinelearning.web.mvc.model.ApiAccess;
 import com.onlinelearning.web.mvc.service.ApiAccessService;
 import com.onlinelearning.web.mvc.service.Service;
 @RestController
-@RequestMapping(path = "/api/v1/apiaccess")
 public class ApiAccessController extends AbstractController<ApiAccess> {
 
 	private final ApiAccessService service;
@@ -23,7 +22,7 @@ public class ApiAccessController extends AbstractController<ApiAccess> {
 		super(service);
 	 this.service = (ApiAccessService) service;
 	}
-    @GetMapping(path = "/{apiAccessId}")
+    @GetMapping(path = "/api/v1/apiaccess/{apiAccessId}")
 	public ResponseEntity<ApiAccess> getOne(@PathVariable(name = "apiAccessId") Long id){
 		ApiAccess acess = service.findOne(id);
 		return ResponseEntity.status(HttpStatus.OK).body(acess);
