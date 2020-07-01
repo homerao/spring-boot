@@ -22,7 +22,7 @@ import com.onlinelearning.web.mvc.model.enums.UserType;
 import com.onlinelearning.web.mvc.model.pk.UserPk;
 
 import lombok.NoArgsConstructor;
-
+@org.springframework.data.relational.core.mapping.Table
 @Entity
 @Table(name = "USERS")
 public class User  extends AbstractSuperClass implements Serializable{

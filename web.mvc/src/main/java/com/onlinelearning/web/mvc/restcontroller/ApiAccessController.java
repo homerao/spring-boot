@@ -28,7 +28,7 @@ public class ApiAccessController extends AbstractController<ApiAccess> {
 		return ResponseEntity.status(HttpStatus.OK).body(acess);
 	}
     
-    @GetMapping
+    @GetMapping(path = "/api/v1/apiaccess")
    	public ResponseEntity<List<ApiAccess>> getAll(){
    		List<ApiAccess> acess = service.findAll();
    		return ResponseEntity.status(HttpStatus.OK).body(acess);

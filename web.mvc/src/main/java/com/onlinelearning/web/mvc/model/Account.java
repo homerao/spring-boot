@@ -19,7 +19,7 @@ import org.hibernate.annotations.FetchMode;
 import lombok.EqualsAndHashCode;
 
 
-
+@org.springframework.data.relational.core.mapping.Table
 @EqualsAndHashCode
 @Entity
 @Table(name = "USER_ACCOUNTS")

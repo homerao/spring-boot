@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
+@org.springframework.data.relational.core.mapping.Table
 @Getter
 @Setter
 @EqualsAndHashCode

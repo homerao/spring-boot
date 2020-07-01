@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 
-
+@org.springframework.data.relational.core.mapping.Table
 @Entity
 @Table(name = "USER_ADDRESS")
 public class UserAddress  extends AbstractSuperClass implements Serializable{

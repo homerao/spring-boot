@@ -21,7 +21,7 @@ import lombok.ToString;
 
 
 
-
+@org.springframework.data.relational.core.mapping.Table
 @Table(name = "EMAILS")
 @Entity
 public class Email extends AbstractSuperClass implements Serializable{

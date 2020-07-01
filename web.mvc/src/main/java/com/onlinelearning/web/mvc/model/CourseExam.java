@@ -2,6 +2,7 @@ package com.onlinelearning.web.mvc.model;
 
 import java.io.Serializable;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+@org.springframework.data.relational.core.mapping.Table
 @Getter
 @Setter
 @EqualsAndHashCode
