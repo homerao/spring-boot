@@ -2,8 +2,11 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
-import com.onlinelearning.web.mvc.model.Payment;
+import org.springframework.stereotype.Component;
 
+import com.onlinelearning.web.mvc.model.Payment;
+@org.springframework.stereotype.Service
+@Component
 public class PaymentService implements Service<Payment> {
 
 	@Override

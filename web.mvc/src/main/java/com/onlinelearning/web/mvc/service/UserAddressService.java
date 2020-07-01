@@ -2,8 +2,11 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
-import com.onlinelearning.web.mvc.model.UserAddress;
+import org.springframework.stereotype.Component;
 
+import com.onlinelearning.web.mvc.model.UserAddress;
+@org.springframework.stereotype.Service
+@Component
 public class UserAddressService implements Service<UserAddress> {
 
 	@Override

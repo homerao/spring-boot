@@ -2,8 +2,11 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
-import com.onlinelearning.web.mvc.model.Email;
+import org.springframework.stereotype.Component;
 
+import com.onlinelearning.web.mvc.model.Email;
+@org.springframework.stereotype.Service
+@Component
 public class EmailService implements Service<Email> {
 
 	@Override
