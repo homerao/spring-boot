@@ -5,12 +5,17 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -33,22 +38,31 @@ public class CourseExamAlternative extends AbstractSuperClass implements Seriali
     private Long alternativeId;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "QUESTION_ID", name = "QUESTION_ID")
+	@Fetch(FetchMode.JOIN)
     private CourseQuestion question;
-	@Column(name = "QUESTION_TEXT", length = 400)
+	@Column(name = "ALTERNATIVE_TEXT", length = 400)
     private String questionText;
-	@Column(name = "QUESTION_ALTERNATIVE")
-    private int questionAlternative;
+	@Column(name = "ALTERNATIVE_TYPE")
+	@Enumerated(EnumType.STRING)
+    private AlternativeType questionAlternative;
+	@Column(name =  "IS_RIGHT_ANSWER")
+	private Character isRightAnswer;
     
     public CourseExamAlternative() {
 	
 	}
 
-	public CourseExamAlternative(CourseQuestion question, String questionText, int questionAlternative) {
+	public CourseExamAlternative(Long alternativeId, CourseQuestion question, String questionText,
+			AlternativeType questionAlternative, Character isRightAnswer) {
 		super();
+		this.alternativeId = alternativeId;
 		this.question = question;
 		this.questionText = questionText;
 		this.questionAlternative = questionAlternative;
+		this.isRightAnswer = isRightAnswer;
 	}
+
+	
     
     
 	
