@@ -2,9 +2,13 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
-import com.onlinelearning.web.mvc.model.ApiAccess;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-public class ApiAccessService implements Service<ApiAccess> {
+import com.onlinelearning.web.mvc.model.ApiAccess;
+@Component
+@Service
+public class ApiAccessService implements com.onlinelearning.web.mvc.service.Service<ApiAccess> {
 
 	@Override
 	public ApiAccess save(ApiAccess entitydto) {
