@@ -45,7 +45,7 @@ public class ApiAccessService implements Service<ApiAccess> {
 	@Override
 	public List<ApiAccess> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return repository.findAll();
 	}
 
 }
