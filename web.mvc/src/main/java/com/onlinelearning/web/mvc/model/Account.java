@@ -43,9 +43,9 @@ public class Account extends AbstractSuperClass implements Serializable {
 	@Column(name = "USER_PASSWORD")
 	private String password;
 	@Column(name = "IS_BLOCKED")
-	private Character isblocked;
+	private boolean isblocked;
 	@Column(name = "IS_BANNED")
-	private Character isBanned;
+	private boolean isBanned;
 	
 	
 	public Account() {
@@ -53,16 +53,20 @@ public class Account extends AbstractSuperClass implements Serializable {
 	}
 
 
-	public Account(Long userAccount, User user, String email, String password, Character isblocked,
-			Character isBanned) {
-		super();
-		this.userAccount = userAccount;
-		this.user = user;
-		this.email = email;
-		this.password = password;
-		this.isblocked = isblocked;
-		this.isBanned = isBanned;
+
+
+	public Account(Long userAccount, User user, String email, String password, boolean isblocked, boolean isBanned) {
+			super();
+			this.userAccount = userAccount;
+			this.user = user;
+			this.email = email;
+			this.password = password;
+			this.isblocked = isblocked;
+			this.isBanned = isBanned;
 	}
+
+
+
 
 @Override
 public String toString() {
@@ -116,25 +120,35 @@ public String toString() {
 	}
 
 
-	public Character getIsblocked() {
+
+
+	public boolean isIsblocked() {
 		return isblocked;
 	}
 
 
-	public void setIsblocked(Character isblocked) {
+
+
+	public void setIsblocked(boolean isblocked) {
 		this.isblocked = isblocked;
 	}
 
 
-	public Character getIsBanned() {
+
+
+	public boolean isBanned() {
 		return isBanned;
 	}
 
 
-	public void setIsBanned(Character isBanned) {
+
+
+	public void setBanned(boolean isBanned) {
 		this.isBanned = isBanned;
 	}
-	
+
+
+
 	
 
 
