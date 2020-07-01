@@ -12,6 +12,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,9 +34,11 @@ public class UserLocation extends AbstractSuperClass implements Serializable{
 	private static final long serialVersionUID = -6889549186832002488L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "LOCATION_ID")
 	private Long locationId;
 	@OneToOne
 	@JoinColumn(name = "ACCOUNT_ID")
+	@Fetch(FetchMode.JOIN)
 	private  Account account;
 	@Column(name = "APP_NAME", length = 50)
 	private String appName;
