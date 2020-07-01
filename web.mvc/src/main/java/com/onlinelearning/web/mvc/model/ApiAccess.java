@@ -22,7 +22,7 @@ import lombok.ToString;
 
 
 @Entity
-@Table(name = "API_ACCESS")
+@Table(name = "API_ACCESS" )
 public class ApiAccess extends AbstractSuperClass implements Serializable {
 
 	
@@ -37,7 +37,7 @@ public class ApiAccess extends AbstractSuperClass implements Serializable {
     private User user = new User();
 	@Column(name = "API_NAME", length = 50)
     private String apiName;
-	@Column(name = "API_SECRET_WORD", length = 40)
+	@Column(name = "API_SECRET_WORD", length = 45)
     private String apiSecretWord;
 	@Column(name = "API_SECRET_TOKEN", length = 128)
     private String apiSecretToken;
