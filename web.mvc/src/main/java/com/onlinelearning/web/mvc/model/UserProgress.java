@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +24,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @Entity
-@Table(name = "USER_LOCATION")
+@Table(name = "USER_MODULE_PROGRESSIONS")
 public class UserProgress extends AbstractSuperClass implements Serializable {
 
 	
@@ -32,9 +35,11 @@ public class UserProgress extends AbstractSuperClass implements Serializable {
     private Long progressId;
 	@OneToOne
 	@JoinColumn(name = "MODULE_ID", referencedColumnName = "MODULE_ID")
+	@Fetch(FetchMode.JOIN)
     private CourseModule moduleId;
 	@OneToOne
 	@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
+	@Fetch(FetchMode.JOIN)
     private User user;
 	@Column(name = "MODULE_PROGRESS")
     private int moduleProgress;
