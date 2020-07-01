@@ -1,5 +1,7 @@
 package com.onlinelearning.web.mvc.restcontroller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +14,7 @@ import com.onlinelearning.web.mvc.model.ApiAccess;
 import com.onlinelearning.web.mvc.service.ApiAccessService;
 import com.onlinelearning.web.mvc.service.Service;
 @RestController
-@RequestMapping(path = "/api/v1/api_access")
+@RequestMapping(path = "/api/v1/apiaccess")
 public class ApiAccessController extends AbstractController<ApiAccess> {
 
 	private final ApiAccessService service;
@@ -26,4 +28,10 @@ public class ApiAccessController extends AbstractController<ApiAccess> {
 		ApiAccess acess = service.findOne(id);
 		return ResponseEntity.status(HttpStatus.OK).body(acess);
 	}
+    
+    @GetMapping
+   	public ResponseEntity<List<ApiAccess>> getAll(){
+   		List<ApiAccess> acess = service.findAll();
+   		return ResponseEntity.status(HttpStatus.OK).body(acess);
+   	}
 }

@@ -2,13 +2,22 @@ package com.onlinelearning.web.mvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.onlinelearning.web.mvc.model.ApiAccess;
+import com.onlinelearning.web.mvc.repository.ApiAccessRepository;
 @Component
 @Service
 public class ApiAccessService implements com.onlinelearning.web.mvc.service.Service<ApiAccess> {
+
+	private final ApiAccessRepository repository;
+	@Autowired
+	public ApiAccessService(ApiAccessRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public ApiAccess save(ApiAccess entitydto) {
@@ -36,8 +45,8 @@ public class ApiAccessService implements com.onlinelearning.web.mvc.service.Serv
 
 	@Override
 	public List<ApiAccess> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return repository.findAll();
 	}
 
 }
